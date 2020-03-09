@@ -25,8 +25,7 @@ def get_users():
 
 
 # return how many users use each shell. Write your stats to shell.stats
-def get_shell_stats():
-    all_users = get_users()
+def get_shell_stats(all_users):
     handle = open("shell.stats", "w")
     get_count = Counter(all_users.values())
     for key, c in get_count.most_common():
@@ -36,5 +35,5 @@ def get_shell_stats():
 
 
 if __name__ == '__main__':
-    get_users()
-    get_shell_stats()
+    user_dict = get_users()
+    get_shell_stats(user_dict)
